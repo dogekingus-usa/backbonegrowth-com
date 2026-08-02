@@ -382,7 +382,7 @@ footer .legal{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid #25405C;
   </div>
 </section>
 
-<!-- ===== AUDIT MAGNETS (Kit embed slots A/B/C) ===== -->
+<!-- ===== AUDIT MAGNETS (Stripe Payment Link slots A/B/C - Kit BANNED per HARD RULE #10) ===== -->
 <section class="section" id="audit">
   <div class="container">
     <h2 style="text-align:center">Free audit. 3 quick wins in 7 days.</h2>
@@ -512,7 +512,7 @@ footer .legal{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid #25405C;
 </footer>
 
 <script>
-// Kit embed slot injection hook — final Kit snippets land here via data-form-slot
+// Stripe Payment Link slot injection hook - links land here via data-form-slot (Kit BANNED per HARD RULE #10)
 window.BackboneEmbed = {
   inject: function(slot, html){
     var el = document.querySelector('.backbone-form[data-form-slot="' + slot + '"]');
