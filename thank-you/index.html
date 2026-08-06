@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Backbone Services Group</title>
+<meta name="description" content="Thank you for choosing Backbone Services Group. Your payment is processing — here's what happens next.">
+<link rel="canonical" href="https://backbonegrowth.com/thank-you">
+<meta property="og:title" content="Thank You — Backbone Services Group">
+<meta property="og:description" content="Your payment is processing. Here's what happens next.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backbonegrowth.com/thank-you">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%2310263D'/%3E%3Crect x='48' y='200' width='160' height='10' fill='%23FFFFFF'/%3E%3Crect x='48' y='136' width='48' height='64' fill='%23FFFFFF'/%3E%3Crect x='104' y='104' width='48' height='96' fill='%23FFFFFF'/%3E%3Crect x='160' y='72' width='48' height='128' fill='%23FFFFFF'/%3E%3Crect x='160' y='72' width='48' height='36' fill='%231E9E5A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS (brand kit v1.0 — matches backbonegrowth.com) ===== */
+:root{
+  --navy:#10263D; --navy-dk:#0A1A2C; --green:#1E9E5A; --green-dk:#178A4E;
+  --stone:#F5F3EE; --slate:#3E4C5C; --ink:#0B1220; --white:#FFFFFF;
+  --border:#E5E0D6;
+  --font-display:'Sora','Archivo',system-ui,-apple-system,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'Cascadia Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.6;font-size:17px;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--green);text-decoration:underline;text-underline-offset:2px}
+h1,h2,h3{font-family:var(--font-display);color:var(--navy);line-height:1.15;font-weight:700}
+.container{max-width:760px;margin:0 auto;padding:0 20px;width:100%}
+/* ===== HEADER ===== */
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.nav .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-family:var(--font-display);font-weight:700;font-size:18px}
+.nav .logo svg{height:34px;width:auto}
+/* ===== THANK YOU ===== */
+.thanks{padding:88px 0 72px;text-align:center;background:linear-gradient(180deg,var(--white) 0%,var(--stone) 100%)}
+.check-circle{width:88px;height:88px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 10px 30px rgba(30,158,90,.25)}
+.check-circle svg{width:44px;height:44px}
+.kicker{font-family:var(--font-mono);color:var(--green);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{margin:14px auto 16px;max-width:600px;font-size:clamp(30px,5vw,44px)}
+.sub{font-size:clamp(16px,2.2vw,19px);color:var(--slate);max-width:560px;margin:0 auto 36px}
+.steps{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:left;margin:0 auto 36px;max-width:560px}
+.steps h3{margin-bottom:14px;font-size:17px}
+.steps ol{margin:0;padding-left:20px;color:var(--slate);font-size:15px}
+.steps ol li{margin-bottom:10px}
+.steps ol li:last-child{margin-bottom:0}
+.steps .mono{font-family:var(--font-mono);color:var(--navy);font-size:13.5px}
+.btn{display:inline-block;font-family:var(--font-body);font-size:16px;font-weight:700;padding:14px 28px;border-radius:8px;text-decoration:none;cursor:pointer;border:none;transition:background .15s ease}
+.btn-cta{background:var(--green);color:var(--white)}
+.btn-cta:hover{background:var(--green-dk)}
+.support-note{margin-top:28px;font-size:14px;color:var(--slate)}
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:var(--white);padding:32px 0;margin-top:auto}
+footer .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:#B9C4CE}
+footer .legal a{color:#B9C4CE}
+footer h4{color:var(--white);font-size:15px;margin-bottom:8px}
+footer p{color:#B9C4CE;font-size:14px;max-width:360px}
+@media(max-width:640px){
+  footer .legal{flex-direction:column;gap:8px}
+  .thanks{padding:64px 0 56px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="/">
+        <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="256" height="256" fill="#10263D"/><rect x="48" y="200" width="160" height="10" fill="#FFFFFF"/><rect x="48" y="136" width="48" height="64" fill="#FFFFFF"/><rect x="104" y="104" width="48" height="96" fill="#FFFFFF"/><rect x="160" y="72" width="48" height="128" fill="#FFFFFF"/><rect x="160" y="72" width="48" height="36" fill="#1E9E5A"/></svg>
+        Backbone Services Group
+      </a>
+      <a href="/" style="color:var(--navy);text-decoration:none;font-weight:600;font-size:15px">← Back to Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="thanks">
+  <div class="container">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="kicker">Payment Received</div>
+    <h1>Thank You — We're On It</h1>
+    <p class="sub">Your payment is processing. A member of the Backbone team will reach out within one business day to kick off your onboarding.</p>
+
+    <div class="steps">
+      <h3>What happens next</h3>
+      <ol>
+        <li><strong>Confirmation email</strong> — watch your inbox for a receipt and next steps (check spam if it doesn't arrive in ~10 minutes).</li>
+        <li><strong>Onboarding call</strong> — we'll schedule a short kickoff to confirm scope and priorities.</li>
+        <li><strong>Kickoff</strong> — work begins. Progress updates delivered on a regular cadence.</li>
+        <li>Questions? Reach us anytime at <span class="mono">hello@backbonegrowth.com</span>.</li>
+      </ol>
+    </div>
+
+    <a class="btn btn-cta" href="/">Explore Our Services</a>
+    <p class="support-note">Need help right now? Email <a href="mailto:hello@backbonegrowth.com">hello@backbonegrowth.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="legal">
+      <span>Backbone Services Group © 2026</span>
+      <span><a href="/privacy/">Privacy Policy (CCPA)</a></span>
+      <span>hello@backbonegrowth.com</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
